@@ -4,9 +4,10 @@ import time
 from datetime import datetime, timedelta
 
 class FileCacheManager:
-    def __init__(self, file_path, signature_algo='sha256', log_mode='print', log_file=None, interval=timedelta(days=1), remove_old_cache=False):
+    def __init__(self, file_path, cache_file_extension = None, signature_algo='sha256', log_mode='print', log_file=None, interval=timedelta(days=1), remove_old_cache=False):
         self.__file_path = file_path
         self.__directory = os.path.join(os.path.dirname(file_path), f'{os.path.basename(file_path).split(".")[0]}_cache')
+        self.__cache_file_extension = cache_file_extension
         self.__signature_algo = signature_algo
         self.__log_mode = log_mode
         self.__log_file = log_file
