@@ -13,4 +13,4 @@
 You can install the library using pip:
 
 ```bash
-pip install -e git+https://github.com/jpabloroa/pyfilecache
+pip install -e git+https://github.com/jpabloroa/pyfilecache#egg=pyfilecache
