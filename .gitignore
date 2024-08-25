@@ -1,0 +1,28 @@
+```text
+# Python-specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+.venv/
+.env/
+
+# Test results
+.coverage
+nosetests.xml
+pytest.log
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+
+# Documentation
+docs/_build/
