@@ -5,8 +5,8 @@ setup(
     version='1.0',
     packages=find_packages(),
     install_requires=[
-        'pandas==1.5.0',
-        'pyarrow==14.0.0'
+        # 'pandas==1.5.0',
+        # 'pyarrow==14.0.0'
     ],
     test_suite='tests',
 )
