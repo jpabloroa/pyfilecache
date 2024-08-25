@@ -4,9 +4,10 @@ import time
 from datetime import datetime, timedelta
 
 class FileCacheManager:
-    def __init__(self, file_path, signature_algo='sha256', log_mode='print', log_file=None, interval=timedelta(days=1), remove_old_cache=False):
+    def __init__(self, file_path, cache_file_extension = None, signature_algo='sha256', log_mode='print', log_file=None, interval=timedelta(days=1), remove_old_cache=False):
         self.__file_path = file_path
         self.__directory = os.path.join(os.path.dirname(file_path), f'{os.path.basename(file_path).split(".")[0]}_cache')
+        self.__cache_file_extension = cache_file_extension
         self.__signature_algo = signature_algo
         self.__log_mode = log_mode
         self.__log_file = log_file
@@ -32,8 +33,8 @@ class FileCacheManager:
         return os.path.join(self.__directory, self.__get_file_name(signature))
 
     def __get_extension(self) -> str:
-        """Extracts the file extension from the file path."""
-        return os.path.splitext(self.__file_path)[1][1:]
+        """Extracts the file extension from the file path if it's not especified."""
+        return self.__cache_file_extension if self.__cache_file_extension is not None else os.path.splitext(self.__file_path)[1][1:]
 
     def __print(self, message: str):
         """Handles output based on the log_mode."""

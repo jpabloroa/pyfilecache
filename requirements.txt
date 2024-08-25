@@ -1,4 +1,0 @@
-# List of dependencies
-pandas==1.5.0
-pyarrow==14.0.0
-# Add other dependencies here
